@@ -8,5 +8,7 @@ namespace backendProjesi.Models
             :base(options) { }
 
         public DbSet<Users> Users { get; set; } = null!;
+
+        public DbSet<Rol> Rol { get; set; } = null!;
     }
 }

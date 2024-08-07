@@ -94,5 +94,30 @@ namespace backendProjesi.Controllers
             await _usersContext.SaveChangesAsync();
             return NoContent();
         }
+
+        //Login : api/Login
+        [HttpPost("login")]
+        public async Task<ActionResult> Login(Users loginUser)
+        {
+            if (_usersContext.Users == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _usersContext.Users
+                .FirstOrDefaultAsync(u => u.Username == loginUser.Username);
+
+            if (user == null)
+            {
+                return Unauthorized("Invalid username or password.");
+            }
+
+            if (user.Password != loginUser.Password)
+            {
+                return Unauthorized("Invalid username or password.");
+            }
+
+            return Ok("Login successful.");
+        }
     }
 }

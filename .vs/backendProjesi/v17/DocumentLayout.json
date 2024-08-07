@@ -3,39 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_TSMVM22/UsersContext/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Migrations\\20240806084738_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backendProjesi\\Migrations\\20240806084738_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\helpers\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\helpers\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\models\\userscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\models\\userscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\controllers\\rolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\controllers\\rolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_TSMVM22/UsersContext/True/SqlTable/dbo.Rol.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_TSMVM22/UsersContext/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\models\\userscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\models\\userscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,64 +44,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "dbo.Users [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_TSMVM22/UsersContext/True/SqlTable/dbo.Users.sql",
-              "ToolTip": "dbo.Users [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-08-06T09:19:20.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "backendProjesi\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "backendProjesi\\Controllers\\UsersController.cs",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Program.cs",
+              "RelativeDocumentMoniker": "backendProjesi\\Program.cs",
+              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Program.cs",
+              "RelativeToolTip": "backendProjesi\\Program.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T09:04:48.674Z",
+              "WhenOpened": "2024-08-07T17:01:04.602Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20240806084738_Initial.cs",
-              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Migrations\\20240806084738_Initial.cs",
-              "RelativeDocumentMoniker": "backendProjesi\\Migrations\\20240806084738_Initial.cs",
-              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Migrations\\20240806084738_Initial.cs",
-              "RelativeToolTip": "backendProjesi\\Migrations\\20240806084738_Initial.cs",
+              "DocumentIndex": 1,
+              "Title": "JwtMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Helpers\\JwtMiddleware.cs",
+              "RelativeDocumentMoniker": "backendProjesi\\Helpers\\JwtMiddleware.cs",
+              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Helpers\\JwtMiddleware.cs",
+              "RelativeToolTip": "backendProjesi\\Helpers\\JwtMiddleware.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T08:47:38.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\appsettings.json",
-              "RelativeDocumentMoniker": "backendProjesi\\appsettings.json",
-              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\appsettings.json",
-              "RelativeToolTip": "backendProjesi\\appsettings.json",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-06T08:38:33.069Z",
+              "WhenOpened": "2024-08-07T16:54:36.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "UsersContext.cs",
-              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Models\\UsersContext.cs",
-              "RelativeDocumentMoniker": "backendProjesi\\Models\\UsersContext.cs",
-              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Models\\UsersContext.cs",
-              "RelativeToolTip": "backendProjesi\\Models\\UsersContext.cs",
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_TSMVM22/UsersContext/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-08-07T16:21:03.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.Rol [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_TSMVM22/UsersContext/True/SqlTable/dbo.Rol.sql",
+              "ToolTip": "dbo.Rol [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-08-07T15:48:24.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Rol.cs",
+              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Models\\Rol.cs",
+              "RelativeDocumentMoniker": "backendProjesi\\Models\\Rol.cs",
+              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Models\\Rol.cs",
+              "RelativeToolTip": "backendProjesi\\Models\\Rol.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T08:32:41.097Z",
+              "WhenOpened": "2024-08-07T15:09:26.645Z",
               "EditorCaption": ""
             },
             {
@@ -119,38 +116,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "backendProjesi\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "backendProjesi\\Controllers\\WeatherForecastController.cs",
+              "DocumentIndex": 8,
+              "Title": "UsersContext.cs",
+              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Models\\UsersContext.cs",
+              "RelativeDocumentMoniker": "backendProjesi\\Models\\UsersContext.cs",
+              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Models\\UsersContext.cs",
+              "RelativeToolTip": "backendProjesi\\Models\\UsersContext.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T08:19:35.641Z",
+              "WhenOpened": "2024-08-06T08:32:41.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "backendProjesi\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "backendProjesi\\Properties\\launchSettings.json",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-06T08:19:03.075Z",
+              "DocumentIndex": 2,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "backendProjesi\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "backendProjesi\\Controllers\\UsersController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T09:04:48.674Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Program.cs",
-              "RelativeDocumentMoniker": "backendProjesi\\Program.cs",
-              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Program.cs",
-              "RelativeToolTip": "backendProjesi\\Program.cs",
+              "Title": "RolController.cs",
+              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\RolController.cs",
+              "RelativeDocumentMoniker": "backendProjesi\\Controllers\\RolController.cs",
+              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\RolController.cs",
+              "RelativeToolTip": "backendProjesi\\Controllers\\RolController.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T07:41:04.638Z",
+              "WhenOpened": "2024-08-07T15:36:07.231Z",
               "EditorCaption": ""
             }
           ]
