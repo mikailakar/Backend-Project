@@ -1,4 +1,6 @@
-﻿namespace backendProjesi.Models
+﻿using System.Text.Json.Serialization;
+
+namespace backendProjesi.Models
 {
     public class Users
     {

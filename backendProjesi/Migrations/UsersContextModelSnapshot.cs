@@ -37,7 +37,7 @@ namespace backendProjesi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rol");
+                    b.ToTable("Rol", (string)null);
                 });
 
             modelBuilder.Entity("backendProjesi.Models.Users", b =>
@@ -62,7 +62,7 @@ namespace backendProjesi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }

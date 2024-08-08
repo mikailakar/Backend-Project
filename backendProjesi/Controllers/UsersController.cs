@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using backendProjesi.Helpers;
+using backendProjesi.Services;
 
 namespace backendProjesi.Controllers
 {
@@ -10,9 +12,11 @@ namespace backendProjesi.Controllers
     public class UsersController : ControllerBase
     {
         private readonly UsersContext _usersContext;
-        public UsersController(UsersContext usersContext)
+        private IUserService _userService;
+        public UsersController(UsersContext usersContext, IUserService userService)
         {
             _usersContext = usersContext;
+            _userService = userService;
         }
 
         // Get : api/Users
@@ -93,31 +97,17 @@ namespace backendProjesi.Controllers
             _usersContext.Users.Remove(users);
             await _usersContext.SaveChangesAsync();
             return NoContent();
-        }
+        }        
 
-        //Login : api/Login
         [HttpPost("login")]
-        public async Task<ActionResult> Login(Users loginUser)
+        public async Task<IActionResult> login(AuthenticateRequest model)
         {
-            if (_usersContext.Users == null)
-            {
-                return NotFound();
-            }
+            var response = await _userService.Authenticate(model);
 
-            var user = await _usersContext.Users
-                .FirstOrDefaultAsync(u => u.Username == loginUser.Username);
+            if (response == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
 
-            if (user == null)
-            {
-                return Unauthorized("Invalid username or password.");
-            }
-
-            if (user.Password != loginUser.Password)
-            {
-                return Unauthorized("Invalid username or password.");
-            }
-
-            return Ok("Login successful.");
+            return Ok(response);
         }
     }
 }

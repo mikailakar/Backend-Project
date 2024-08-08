@@ -259,15 +259,15 @@
   },
   {
     "ContainingType": "backendProjesi.Controllers.UsersController",
-    "Method": "Login",
+    "Method": "login",
     "RelativePath": "api/Users/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "loginUser",
-        "Type": "backendProjesi.Models.Users",
+        "Name": "model",
+        "Type": "backendProjesi.Models.AuthenticateRequest",
         "IsRequired": true
       }
     ],
