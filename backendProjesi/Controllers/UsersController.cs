@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backendProjesi.Helpers;
-using backendProjesi.Services;
+using backendProjesi.Implements;
+using backendProjesi.Interfaces;
 
 namespace backendProjesi.Controllers
 {
@@ -21,85 +22,59 @@ namespace backendProjesi.Controllers
 
         // Get : api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+        //[Authorize]
+        public async Task<IActionResult> Get()
         {
-            if (_usersContext.Users == null)
-            {
-                return NotFound();
-            }
-            return await _usersContext.Users.ToListAsync();
+            return Ok(await _userService.GetAllUsers());
         }
 
         // Get : api/Users/2
         [HttpGet("{id}")]
-        public async Task<ActionResult<Users>> GetUsers(int id)
+        //[Authorize]
+        public async Task<ActionResult> GetUser(int id)
         {
-            if (_usersContext.Users is null)
-            {
+            var user = await _userService.GetUserById(id);
+            if (user == null) {
                 return NotFound();
             }
-            var users = await _usersContext.Users.FindAsync(id);
-            if (users is null)
-            {
-                return NotFound();
-            }
-            return users;
+            return Ok(user);
         }
 
         // Post : api/Users
         [HttpPost]
-        public async Task<ActionResult<Users>> PostUsers(Users users)
+        //[Authorize]
+        public async Task<IActionResult> Post([FromBody] Users userObj)
         {
-            _usersContext.Users.Add(users);
-            await _usersContext.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetUsers), new { id = users.Id }, users);
+            userObj.Id = 0;
+            return Ok(await _userService.AddNewUser(userObj));
         }
 
         // Put : api/Users/2
-        [HttpPut]
-        public async Task<ActionResult<Users>> PutUsers(int id, Users users)
+        [HttpPut("{id}")]
+        //[Authorize]
+        public async Task<IActionResult> Put(int id, [FromBody] Users userObj)
         {
-            if (id != users.Id)
-            {
-                return BadRequest();
-            }
-            _usersContext.Entry(users).State = EntityState.Modified;
-            try
-            {
-                await _usersContext.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsersExists(id)) { return NotFound(); }
-                else { throw; }
-            }
-            return NoContent();
-        }
-
-        private bool UsersExists(long id)
-        {
-            return (_usersContext.Users?.Any(users => users.Id == id)).GetValueOrDefault();
+            userObj.Id = id;
+            return Ok(await _userService.UpdateUser(userObj));
         }
 
         // Delete : api/Users/2
         [HttpDelete("{id}")]
+        //[Authorize]
         public async Task<ActionResult<Users>> DeleteUsers(int id)
         {
-            if (_usersContext.Users is null)
-            {
-                return NotFound();
-            }
-            var users = await _usersContext.Users.FindAsync(id);
-            if (users is null)
-            {
-                return NotFound();
-            }
-            _usersContext.Users.Remove(users);
-            await _usersContext.SaveChangesAsync();
-            return NoContent();
-        }        
+            return Ok(await _userService.DeleteUserById(id));
+        }
 
-        [HttpPost("login")]
+        // Delete : api/Users/2
+        [HttpDelete("soft/{id}")]
+        //[Authorize]
+        public async Task<ActionResult<Users>> SoftDeleteUsers(int id)
+        {
+            return Ok(await _userService.SoftDeleteUserById(id));
+        }
+
+        /*[HttpPost("login")]
         public async Task<IActionResult> login(AuthenticateRequest model)
         {
             var response = await _userService.Authenticate(model);
@@ -108,6 +83,6 @@ namespace backendProjesi.Controllers
                 return BadRequest(new { message = "Username or password is incorrect" });
 
             return Ok(response);
-        }
+        }*/
     }
 }

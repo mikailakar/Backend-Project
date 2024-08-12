@@ -1,6 +1,7 @@
 using backendProjesi.Helpers;
 using backendProjesi.Models;
-using backendProjesi.Services;
+using backendProjesi.Interfaces;
+using backendProjesi.Implements;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 

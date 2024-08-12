@@ -9,12 +9,12 @@ using System.Text;
 
 namespace backendProjesi.Services
 {
-    public class UserService : IUserService
+    public class UserService55 : IUserService
     {
         private readonly AppSettings _appSettings;
         private readonly UsersContext db;
 
-        public UserService(IOptions<AppSettings> appSettings, UsersContext _db)
+        public UserService55(IOptions<AppSettings> appSettings, UsersContext _db)
         {
             _appSettings = appSettings.Value;
             db = _db;

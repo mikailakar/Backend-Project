@@ -1,5 +1,6 @@
 ﻿using backendProjesi.Models;
-using backendProjesi.Services;
+using backendProjesi.Interfaces;
+using backendProjesi.Implements;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -48,7 +49,7 @@ namespace backendProjesi.Helpers
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 //Attach user to context on successful JWT validation
-                context.Items["User"] = await userService.GetById(userId);
+                context.Items["User"] = await userService.GetUserById(userId);
             }
             catch
             {
