@@ -11,5 +11,7 @@ namespace backendProjesi.Models
         public string? Email { get; set; }
         public string? Password { get; set; }
         public bool? IsActive { get; set; }
+        [JsonIgnore]
+        public Rol Roles { get; set; }
     }
 }

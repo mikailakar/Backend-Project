@@ -219,6 +219,38 @@
   },
   {
     "ContainingType": "backendProjesi.Controllers.UsersController",
+    "Method": "DecodeJwtToken",
+    "RelativePath": "api/Users/DecodeJwtToken",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backendProjesi.Controllers.UsersController",
+    "Method": "login",
+    "RelativePath": "api/Users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "backendProjesi.Models.AuthenticateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backendProjesi.Controllers.UsersController",
     "Method": "SoftDeleteUsers",
     "RelativePath": "api/Users/soft/{id}",
     "HttpMethod": "DELETE",

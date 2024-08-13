@@ -49,7 +49,10 @@ namespace backendProjesi.Helpers
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 //Attach user to context on successful JWT validation
-                context.Items["User"] = await userService.GetUserById(userId);
+                var user = await userService.GetUserById(userId);
+                var roles = await userService.GetUserRoles(userId);
+                context.Items["User"] = user;
+                context.Items["Roles"] = roles;
             }
             catch
             {

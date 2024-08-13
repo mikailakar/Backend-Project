@@ -78,5 +78,60 @@ namespace backendProjesi.Implements
             }
             return isSuccess ? obj : null;
         }
+        public async Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model)
+        {
+            var user = await db.Users.SingleOrDefaultAsync(x => x.Username == model.Username && x.Password == model.Password);
+
+            // return null if user not found
+            if (user == null) return null;
+
+            // authentication successful so generate jwt token
+            var token = await generateJwtToken(user);
+
+            return new AuthenticateResponse(user, token);
+        }
+        private async Task<string> generateJwtToken(Users user)
+        {
+            var roles = await db.Roles
+                .Where(r => r.UserId == user.Id)
+                .Select(r => r.RoleName)
+                .ToListAsync();
+
+            // Create the claims for the token, including the roles
+            var claims = new List<Claim>
+            {
+                new Claim("id", user.Id.ToString()),
+            };
+
+            // Add role claims
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            //Generate token that is valid for 7 days
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = await Task.Run(() =>
+            {
+                return tokenHandler.CreateToken(tokenDescriptor);
+            });
+
+            return tokenHandler.WriteToken(token);
+        }
+        public async Task<List<string>> GetUserRoles(int userId)
+        {
+            return await db.Roles
+                .Where(r => r.UserId == userId)
+                .Select(r => r.RoleName)
+                .ToListAsync();
+        }
     }
 }

@@ -19,22 +19,22 @@ namespace backendProjesi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Rol>>> GetRol()
         {
-            if (_rolContext.Rol == null)
+            if (_rolContext.Roles == null)
             {
                 return NotFound();
             }
-            return await _rolContext.Rol.ToListAsync();
+            return await _rolContext.Roles.ToListAsync();
         }
 
         // Get : api/Rol/2
         [HttpGet("{id}")]
         public async Task<ActionResult<Rol>> GetRol(int id)
         {
-            if (_rolContext.Rol is null)
+            if (_rolContext.Roles is null)
             {
                 return NotFound();
             }
-            var rol = await _rolContext.Rol.FirstOrDefaultAsync(u => u.uId == id);
+            var rol = await _rolContext.Roles.FirstOrDefaultAsync(u => u.UserId == id);
             if (rol is null)
             {
                 return NotFound();
@@ -46,7 +46,7 @@ namespace backendProjesi.Controllers
         [HttpPost]
         public async Task<ActionResult<Rol>> PostRol(Rol rol)
         {
-            _rolContext.Rol.Add(rol);
+            _rolContext.Roles.Add(rol);
             await _rolContext.SaveChangesAsync();
             return CreatedAtAction(nameof(GetRol), new { id = rol.Id }, rol);
         }
@@ -74,23 +74,23 @@ namespace backendProjesi.Controllers
 
         private bool RolExists(long id)
         {
-            return (_rolContext.Rol?.Any(rol => rol.Id == id)).GetValueOrDefault();
+            return (_rolContext.Roles?.Any(rol => rol.Id == id)).GetValueOrDefault();
         }
 
         // Delete : api/Rol/2
         [HttpDelete("{id}")]
         public async Task<ActionResult<Rol>> DeleteRol(int id)
         {
-            if (_rolContext.Rol is null)
+            if (_rolContext.Roles is null)
             {
                 return NotFound();
             }
-            var rol = await _rolContext.Rol.FindAsync(id);
+            var rol = await _rolContext.Roles.FindAsync(id);
             if (rol is null)
             {
                 return NotFound();
             }
-            _rolContext.Rol.Remove(rol);
+            _rolContext.Roles.Remove(rol);
             await _rolContext.SaveChangesAsync();
             return NoContent();
         }
