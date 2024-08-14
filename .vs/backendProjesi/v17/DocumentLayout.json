@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|solutionrelative:backendprojesi\\helpers\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89733E70-8E4C-4E23-A694-EB5372BE50F3}|backendProjesi\\backendProjesi.csproj|c:\\users\\mikail\\source\\repos\\backendprojesi\\backendprojesi\\helpers\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,19 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Program.cs",
+              "RelativeDocumentMoniker": "backendProjesi\\Program.cs",
+              "ToolTip": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Program.cs",
+              "RelativeToolTip": "backendProjesi\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T09:20:05.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "JwtMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Helpers\\JwtMiddleware.cs",
               "RelativeDocumentMoniker": "backendProjesi\\Helpers\\JwtMiddleware.cs",
@@ -46,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Implements\\UserService.cs",
               "RelativeDocumentMoniker": "backendProjesi\\Implements\\UserService.cs",
@@ -58,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "backendProjesi\\Interfaces\\IUserService.cs",
@@ -70,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "backendProjesi\\Controllers\\UsersController.cs",
@@ -82,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AuthorizeAttribute.cs",
               "DocumentMoniker": "C:\\Users\\Mikail\\source\\repos\\backendProjesi\\backendProjesi\\Helpers\\AuthorizeAttribute.cs",
               "RelativeDocumentMoniker": "backendProjesi\\Helpers\\AuthorizeAttribute.cs",
