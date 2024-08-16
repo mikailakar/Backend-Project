@@ -12,5 +12,7 @@ namespace backendProjesi.Interfaces
         Task<Users?> SoftDeleteUserById(int id);
         Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model);
         Task<List<string>> GetUserRoles(int userId);
+        Task<List<UserWithRoleDto>> GetUsersWithRolesAsync();
+        Task<UserWithRoleDto> GetUserWithRoleByIdAsync(int id);
     }
 }

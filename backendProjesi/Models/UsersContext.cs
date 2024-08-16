@@ -11,18 +11,6 @@ namespace backendProjesi.Models
 
         public DbSet<Users> Users { get; set; } = null!;
         public DbSet<Rol> Roles { get; set; } = null!;
-
         public DbSet<UserWithRoleDto> UsersWithRoles { get; set; }
-
-        public async Task<List<UserWithRoleDto>> GetUsersWithRolesAsync()
-        {
-            return await UsersWithRoles.FromSqlRaw("EXEC GetUsersWithRoles").ToListAsync();
-        }
-        public async Task<UserWithRoleDto> GetUserWithRoleByIdAsync(int id)
-        {
-            var usersWithRoles = await UsersWithRoles.FromSqlRaw("EXEC GetUsersWithRoles").ToListAsync();
-            
-            return usersWithRoles.FirstOrDefault(x => x.Id == id);
-        }
     }
 }

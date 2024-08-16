@@ -128,10 +128,17 @@ namespace backendProjesi.Implements
         }
         public async Task<List<string>> GetUserRoles(int userId)
         {
-            return await db.Roles
-                .Where(r => r.UserId == userId)
-                .Select(r => r.RoleName)
-                .ToListAsync();
+            return await db.Roles.Where(r => r.UserId == userId).Select(r => r.RoleName).ToListAsync();
+        }
+        public async Task<List<UserWithRoleDto>> GetUsersWithRolesAsync()
+        {
+            return await db.UsersWithRoles.FromSqlRaw("EXEC GetUsersWithRoles").ToListAsync();
+        }
+        public async Task<UserWithRoleDto> GetUserWithRoleByIdAsync(int id)
+        {
+            var usersWithRoles = await db.UsersWithRoles.FromSqlRaw("EXEC GetUsersWithRoles").ToListAsync();
+
+            return usersWithRoles.FirstOrDefault(c => c.Id == id);
         }
     }
 }

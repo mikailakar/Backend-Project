@@ -130,19 +130,19 @@ namespace backendProjesi.Controllers
         [HttpGet("GetUsersWithRoles")]
         public async Task<ActionResult<IEnumerable<UserWithRoleDto>>> GetUsersWithRoles()
         {
-            var usersWithRoles = await _usersContext.GetUsersWithRolesAsync();
+            var usersWithRoles = await _userService.GetUsersWithRolesAsync();
             return Ok(usersWithRoles);
         }
 
         [HttpGet("GetUserWithRoleById")]
-        public async Task<ActionResult<IEnumerable<UserWithRoleDto>>> GetUserWithRoleById(int id)
+        public async Task<ActionResult<UserWithRoleDto>> GetUserWithRoleById(int id)
         {
-            var usersWithRoles = await _usersContext.GetUserWithRoleByIdAsync(id);
-            if (usersWithRoles == null)
+            var usersWithRole = await _userService.GetUserWithRoleByIdAsync(id);
+            if (usersWithRole == null)
             {
                 return NotFound(new { message = "User Not Found!" });
             }
-            return Ok(usersWithRoles);
+            return Ok(usersWithRole);
         }
     }
 }
