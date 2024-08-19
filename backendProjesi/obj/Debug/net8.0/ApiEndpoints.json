@@ -235,6 +235,16 @@
   },
   {
     "ContainingType": "backendProjesi.Controllers.UsersController",
+    "Method": "GetAllUsersOrderByDate",
+    "RelativePath": "api/Users/GetAllUsersOrderByDate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backendProjesi.Controllers.UsersController",
     "Method": "GetUsersWithRoles",
     "RelativePath": "api/Users/GetUsersWithRoles",
     "HttpMethod": "GET",

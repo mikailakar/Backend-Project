@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
 
 namespace backendProjesi.Implements
 {
@@ -35,9 +36,11 @@ namespace backendProjesi.Implements
         }
         public async Task<Users?> AddNewUser(Users userObj)
         {
-            bool isSuccess = false;
+            var passwordService = new PasswordHasher<Users>();
+            userObj.Password = passwordService.HashPassword(userObj, userObj.Password);
+            userObj.InserDate = DateTime.UtcNow;
             await db.Users.AddAsync(userObj);
-            isSuccess = await db.SaveChangesAsync() > 0;
+            bool isSuccess = await db.SaveChangesAsync() > 0;
             return isSuccess ? userObj : null;
         }
         public async Task<Users?> UpdateUser(Users userObj)
@@ -49,7 +52,9 @@ namespace backendProjesi.Implements
                 obj.Name = userObj.Name;
                 obj.Username = userObj.Username;
                 obj.Email = userObj.Email;
-                obj.Password = userObj.Password;
+                var passwordService = new PasswordService();
+                string hashedPassword = passwordService.HashPassword(userObj.Password);
+                obj.Password = hashedPassword;
                 db.Users.Update(obj);
                 isSuccess = await db.SaveChangesAsync() > 0;
             }
@@ -80,14 +85,14 @@ namespace backendProjesi.Implements
         }
         public async Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model)
         {
-            var user = await db.Users.SingleOrDefaultAsync(x => x.Username == model.Username && x.Password == model.Password);
-
-            // return null if user not found
+            var storedHashedPassword = await db.Users.Where(u => u.Email == model.Email).Select(r => r.Password).SingleOrDefaultAsync();
+            if (storedHashedPassword == null)
+                return null;
+            var passwordService = new PasswordService();
+            bool isPasswordValid = passwordService.VerifyPassword(storedHashedPassword, model.Password);
+            var user = isPasswordValid ? await db.Users.SingleOrDefaultAsync(x => x.Email == model.Email) : null;
             if (user == null) return null;
-
-            // authentication successful so generate jwt token
             var token = await generateJwtToken(user);
-
             return new AuthenticateResponse(user, token);
         }
         private async Task<string> generateJwtToken(Users user)
@@ -96,20 +101,14 @@ namespace backendProjesi.Implements
                 .Where(r => r.UserId == user.Id)
                 .Select(r => r.RoleName)
                 .ToListAsync();
-
-            // Create the claims for the token, including the roles
             var claims = new List<Claim>
             {
                 new Claim("id", user.Id.ToString()),
             };
-
-            // Add role claims
             foreach (var role in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
-
-            //Generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -118,7 +117,6 @@ namespace backendProjesi.Implements
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
-
             var token = await Task.Run(() =>
             {
                 return tokenHandler.CreateToken(tokenDescriptor);
@@ -139,6 +137,10 @@ namespace backendProjesi.Implements
             var usersWithRoles = await db.UsersWithRoles.FromSqlRaw("EXEC GetUsersWithRoles").ToListAsync();
 
             return usersWithRoles.FirstOrDefault(c => c.Id == id);
+        }
+        public async Task<IEnumerable<Users>> GetAllUsersOrderByDateAsync()
+        {
+            return await db.Users.Where(u => u.InserDate != null).OrderByDescending(u => u.InserDate).ToListAsync();
         }
     }
 }

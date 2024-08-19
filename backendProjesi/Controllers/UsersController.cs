@@ -98,10 +98,8 @@ namespace backendProjesi.Controllers
         public async Task<IActionResult> login(AuthenticateRequest model)
         {
             var response = await _userService.Authenticate(model);
-
             if (response == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
-
             return Ok(response);
         }
 
@@ -109,18 +107,13 @@ namespace backendProjesi.Controllers
         public async Task<IActionResult> DecodeJwtToken(string token)
         {
             var handler = new JwtSecurityTokenHandler();
-            var jwtToken = handler.ReadJwtToken(token);
-            
+            var jwtToken = handler.ReadJwtToken(token);            
             var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
             var exp = jwtToken.Claims.FirstOrDefault(c => c.Type == "exp")?.Value;
-
-            if (userId == null)
-            {
+            if (userId == null){
                 throw new Exception("Token does not contain a user ID.");
             }
-
-            if (exp == null || !long.TryParse(exp, out var expValue))
-            {
+            if (exp == null || !long.TryParse(exp, out var expValue)){
                 throw new Exception("Token does not contain a valid expiration time.");
             }
             var res = "UserID: " + userId + "\nExpiration: " + DateTimeOffset.FromUnixTimeSeconds(expValue).DateTime;
@@ -143,6 +136,11 @@ namespace backendProjesi.Controllers
                 return NotFound(new { message = "User Not Found!" });
             }
             return Ok(usersWithRole);
+        }
+        [HttpGet("GetAllUsersOrderByDate")]
+        public async Task<IActionResult> GetAllUsersOrderByDate()
+        {
+            return Ok(await _userService.GetAllUsersOrderByDateAsync());
         }
     }
 }
