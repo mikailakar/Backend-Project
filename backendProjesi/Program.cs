@@ -6,28 +6,22 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
-
-builder.Services.AddDbContext<UsersContext>(options=>
-                    options.UseSqlServer(builder.Configuration.GetConnectionString("UsersContext")));
+builder.Services.AddDbContext<UsersContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("UsersContext")));
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddScoped<IUserService, UserService>();
-
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
         .AddRoleManager<RoleManager<IdentityRole>>()
         .AddDefaultUI()
         .AddDefaultTokenProviders()
         .AddEntityFrameworkStores<UsersContext>();
-
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddSwaggerGen(swagger =>
 {

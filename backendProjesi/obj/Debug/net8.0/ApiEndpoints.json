@@ -148,7 +148,7 @@
     "Parameters": [
       {
         "Name": "userObj",
-        "Type": "backendProjesi.Models.Users",
+        "Type": "backendProjesi.Models.VMUsers",
         "IsRequired": true
       }
     ],
@@ -185,7 +185,7 @@
       },
       {
         "Name": "userObj",
-        "Type": "backendProjesi.Models.Users",
+        "Type": "backendProjesi.Models.VMUsers",
         "IsRequired": true
       }
     ],

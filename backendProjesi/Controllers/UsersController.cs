@@ -48,24 +48,22 @@ namespace backendProjesi.Controllers
         // Post : api/Users
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Post([FromBody] Users userObj)
+        public async Task<IActionResult> Post([FromBody] VMUsers userObj)
         {
-            userObj.Id = 0;
             return Ok(await _userService.AddNewUser(userObj));
         }
 
         // Put : api/Users/2
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Put(int id, [FromBody] Users userObj)
+        public async Task<IActionResult> Put(int id, [FromBody] VMUsers userObj)
         {
             Users user = await _userService.GetUserById(id);
             if (user == null)
             {
                 return NotFound(new { message = "User Not Found!" });
             }
-            userObj.Id = id;
-            return Ok(await _userService.UpdateUser(userObj));
+            return Ok(await _userService.UpdateUser(id, userObj));
         }
 
         // Delete : api/Users/2
@@ -99,7 +97,7 @@ namespace backendProjesi.Controllers
         {
             var response = await _userService.Authenticate(model);
             if (response == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
+                return BadRequest(new { message = "Email or password is incorrect" });
             return Ok(response);
         }
 
@@ -108,11 +106,12 @@ namespace backendProjesi.Controllers
         {
             var handler = new JwtSecurityTokenHandler();
             var jwtToken = handler.ReadJwtToken(token);            
-            var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
+            var user = jwtToken.Claims.First(x => x.Type == "id");
             var exp = jwtToken.Claims.FirstOrDefault(c => c.Type == "exp")?.Value;
-            if (userId == null){
+            if (user == null){
                 throw new Exception("Token does not contain a user ID.");
             }
+            var userId = int.Parse(user.Value);
             if (exp == null || !long.TryParse(exp, out var expValue)){
                 throw new Exception("Token does not contain a valid expiration time.");
             }

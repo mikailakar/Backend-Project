@@ -6,8 +6,8 @@ namespace backendProjesi.Interfaces
     {
         Task<IEnumerable<Users>> GetAllUsers();
         Task<Users?> GetUserById(int id);
-        Task<Users?> AddNewUser(Users userObj);
-        Task<Users?> UpdateUser(Users userObj);
+        Task<Users?> AddNewUser(VMUsers userObj);
+        Task<Users?> UpdateUser(int id, VMUsers userObj);
         Task<Users?> DeleteUserById(int id);
         Task<Users?> SoftDeleteUserById(int id);
         Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model);

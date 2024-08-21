@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
+using AutoMapper;
 
 namespace backendProjesi.Implements
 {
@@ -14,11 +15,13 @@ namespace backendProjesi.Implements
     {
         private readonly AppSettings _appSettings;
         private readonly UsersContext db;
+        private readonly IMapper _mapper;
 
-        public UserService(IOptions<AppSettings> appSettings, UsersContext _db)
+        public UserService(IOptions<AppSettings> appSettings, UsersContext _db, IMapper mapper)
         {
             _appSettings = appSettings.Value;
             db = _db;
+            _mapper = mapper;
         }
 
         public async Task<IEnumerable<Users>> GetAllUsers()
@@ -34,31 +37,30 @@ namespace backendProjesi.Implements
             }
             return userObj;
         }
-        public async Task<Users?> AddNewUser(Users userObj)
+        public async Task<Users?> AddNewUser(VMUsers userObj)
         {
+            Users user = _mapper.Map<Users>(userObj);
             var passwordService = new PasswordHasher<Users>();
-            userObj.Password = passwordService.HashPassword(userObj, userObj.Password);
-            userObj.InserDate = DateTime.UtcNow;
-            await db.Users.AddAsync(userObj);
+            user.Password = passwordService.HashPassword(user, user.Password);
+            user.IsActive = true;
+            user.InserDate = DateTime.UtcNow;
+            await db.Users.AddAsync(user);
             bool isSuccess = await db.SaveChangesAsync() > 0;
-            return isSuccess ? userObj : null;
+            return isSuccess ? user : null;
         }
-        public async Task<Users?> UpdateUser(Users userObj)
+        public async Task<Users?> UpdateUser(int id, VMUsers userObj)
         {
-            bool isSuccess = false;
-            var obj = await db.Users.FirstOrDefaultAsync(c => c.Id == userObj.Id);
-            if (obj != null)
+            var obj = await db.Users.FirstOrDefaultAsync(c => c.Id == id);
+            _mapper.Map(userObj, obj);
+            if (!string.IsNullOrEmpty(userObj.Password))
             {
-                obj.Name = userObj.Name;
-                obj.Username = userObj.Username;
-                obj.Email = userObj.Email;
                 var passwordService = new PasswordService();
                 string hashedPassword = passwordService.HashPassword(userObj.Password);
                 obj.Password = hashedPassword;
-                db.Users.Update(obj);
-                isSuccess = await db.SaveChangesAsync() > 0;
             }
-            return isSuccess ? userObj : null;
+            db.Users.Update(obj);
+            bool isSuccess = await db.SaveChangesAsync() > 0;
+            return isSuccess ? obj : null;
         }
         public async Task<Users?> DeleteUserById(int id)
         {
