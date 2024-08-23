@@ -36,16 +36,23 @@ This project is a backend API built with ASP.NET Core for managing users and rol
     ```bash
     git clone https://github.com/mikailakar/Backend-Projesi.git
     ```
-2. Open the project with Visual Studio.
-3. Restore the dependencies:
+2. Navigate into the project directory:
+    ```bash
+    cd Backend-Projesi
+    ```
+3. Open the project with Visual Studio.
+    ```bash
+    start backendProjesi.sln
+    ```
+4. Restore the dependencies:
     ```bash
     dotnet restore
     ```
-4. Update the database:
+5. Update the database:
     ```bash
     update-database
     ```
-5. Run the project:
+6. Run the project:
     ```bash
     dotnet run
     ```
