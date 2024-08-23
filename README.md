@@ -88,7 +88,6 @@ Send a GET request to the `/api/Users` endpoint with a valid JWT token in the `A
   - **Details**: Uses AutoMapper to update only the fields that are provided. Passwords are rehashed if updated.
 - `DELETE /api/Users/{id}`: Delete a user by ID (Admin only).
 - `DELETE /api/Users/soft/{id}`: Soft delete a user by ID (Admin only).
-- `GET /api/Users/GetAllUsersOrderByDate`: Retrieve all users ordered by the date of insertion.
 
 ### JWT Decoding
 
@@ -98,6 +97,7 @@ Send a GET request to the `/api/Users` endpoint with a valid JWT token in the `A
 
 - `GET /api/Users/GetUsersWithRoles`: Retrieve all users with their roles.
 - `GET /api/Users/GetUserWithRoleById`: Retrieve a user with their roles by user ID.
+- `GET /api/Users/GetAllUsersOrderByDate`: Retrieve all users ordered by the date of insertion.
 
 ## Contact
 
