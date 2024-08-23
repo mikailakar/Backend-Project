@@ -103,7 +103,9 @@ Send a GET request to the `/api/Users` endpoint with a valid JWT token in the `A
 ### User and Role Management
 
 - `GET /api/Users/GetUsersWithRoles`: Retrieve all users with their roles.
+  - **Details**: Uses a Stored Procedure that returns Users information needed with their roles.
 - `GET /api/Users/GetUserWithRoleById`: Retrieve a user with their roles by user ID.
+  - **Details**: Uses a Stored Procedure that returns User information needed with his role.
 - `GET /api/Users/GetAllUsersOrderByDate`: Retrieve all users ordered by the date of insertion, with newer users listed first.
 
 ## Contact
