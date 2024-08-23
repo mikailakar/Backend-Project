@@ -24,9 +24,11 @@ namespace backendProjesi.Implements
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Users>> GetAllUsers()
+        public async Task<IEnumerable<VMUsers2>> GetAllUsers()
         {
-            return await db.Users.Where(x => x.IsActive == true).ToListAsync();
+            var res = await db.Users.Where(x => x.IsActive == true).ToListAsync();
+            var users = _mapper.Map<IEnumerable<VMUsers2>>(res);
+            return users;
         }
 
         public async Task<Users?> GetUserById(int id)

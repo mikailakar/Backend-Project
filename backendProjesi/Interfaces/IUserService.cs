@@ -4,7 +4,7 @@ namespace backendProjesi.Interfaces
 {
     public interface IUserService
     {
-        Task<IEnumerable<Users>> GetAllUsers();
+        Task<IEnumerable<VMUsers2>> GetAllUsers();
         Task<Users?> GetUserById(int id);
         Task<Users?> AddNewUser(VMUsers userObj);
         Task<Users?> UpdateUser(int id, VMUsers userObj);
