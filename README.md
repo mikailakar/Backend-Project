@@ -1,4 +1,4 @@
-# Backend Projesi
+# Backend Project
 
 This project is a backend API built with ASP.NET Core for managing users and roles, featuring user authentication, role-based access control, JWT token generation, and CRUD operations for user data. The project is structured with interfaces and their respective implementations, making it easy to extend and maintain.
 
