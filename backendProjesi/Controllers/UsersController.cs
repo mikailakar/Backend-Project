@@ -27,7 +27,6 @@ namespace backendProjesi.Controllers
 
         // Get : api/Users
         [HttpGet]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Get()
         {
             return Ok(await _userService.GetAllUsers());
@@ -35,7 +34,6 @@ namespace backendProjesi.Controllers
 
         // Get : api/Users/2
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> GetUser(int id)
         {
             Users user = await _userService.GetUserById(id);
