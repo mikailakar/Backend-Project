@@ -10,6 +10,17 @@ using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDev",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200")  // Allow Angular app on port 4200
+                  .AllowAnyHeader()   // Allow any header (Content-Type, etc.)
+                  .AllowAnyMethod();  // Allow any HTTP method (GET, POST, PUT, DELETE)
+        });
+});
+
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddDbContext<UsersContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("UsersContext")));
 
@@ -61,6 +72,9 @@ builder.Services.AddSwaggerGen(swagger =>
 
 
 var app = builder.Build();
+
+app.UseCors("AllowAngularDev");
+app.UseRouting();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
